@@ -101,3 +101,64 @@ git push -u origin 브랜치명
 #### 이상태에서 main이 아닌 새 브런치로 이동하여 커밋 하고 싶다면
 
 #### `git checkout newImage; git commit` 이렇게 하여 현재 작업중인 브랜치를 newImage로 변경해준후 커밋하면 된다
+
+## 3. 브랜치 합치기 (Merge)
+
+- 브랜치를 합치는 것
+
+### Merge 의 종류
+
+- 보통의 병합 (--ff)
+- 이기적 병합 (--no-ff)
+- 소심한 병합 (--ff-only)
+- 양아치 병합 (--squash)
+
+#### 보통의 병합
+
+#### `git merge 병합할 브랜치 명`
+
+#### 이기적인 병합
+
+#### `git merge --no--ff 병합할 브랜치 명`
+
+현재 브랜치와 병합 대상의 관계가 Fast-Forward이던 아니던 무조건 Merge 커밋과 같이 병합
+
+#### 소심한 병합
+
+#### `git merge --ff--only 병합할 브랜치 명`
+
+현재 브랜치와 병합 대상의 관계가 Fast-Forward인 경우에만 병합 진행
+
+#### 양아치 병합
+
+#### `git merge --squash 병합할 브랜치 명`
+
+현재 브랜치에 병합 대상과의 차이나는 commit을 하나로 합쳐서 커밋
+
+### Fast-Forward 란?
+
+#### 2개의 커밋 A와 B가 있을때에 커밋A에 따른 히스토리가 커밋B에 따른 히스토리에 전부 포함되어 있는 경우
+
+<img src="./img/fast1.png">
+<br/>
+
+#### 이렇게 모든 히스토리가 포함되있으면 Fast-Forward
+
+<img src="./img/fast2.png">
+<br/>
+
+#### 이렇게 포함되있지 않으면 Fast-Forward가 아니다
+
+### Ex)
+
+<img src="./img/merge1.png">
+<br/>
+
+#### 이렇게 두개의 브랜치가 있는데
+
+#### `git merge bugFix` 를 하게 되면
+
+<img src="./img/merge2.png">
+<br/>
+
+#### 이렇게 두개의 브랜치의 작업내용들을 하나로 합쳐지게 된다
