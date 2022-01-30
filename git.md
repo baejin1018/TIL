@@ -105,6 +105,7 @@ git push -u origin 브랜치명
 ## 3. 브랜치 합치기 (Merge)
 
 - 브랜치를 합치는 것
+- Merge는 쉽고 안전하지만 커밋히스토리가 지저분할 수 있다
 
 ### Merge 의 종류
 
@@ -162,3 +163,36 @@ git push -u origin 브랜치명
 <br/>
 
 #### 이렇게 두개의 브랜치의 작업내용들을 하나로 합쳐지게 된다
+
+## 브랜치 합치기 (rebase)
+
+- 기본적으로 커밋들을 모아서 복사한 후 다른 곳에 떨궈 놓는 것
+- Merge와 Rebase의 실행결과는 같지만 커밋 히스토리가 다르다
+- Rebase 까다롭지만 커밋히스토리를 깔끔하게 관리할 수 있다
+
+### 사용법
+
+```
+git rebase 브랜치 이름
+```
+
+##### 다음번에 더 추가할 예정 ... 😛
+
+### Ex)
+
+<img src="./img/rebase1.png">
+<br/>
+
+#### 이렇게 main과 bygFix 브런치가 있다
+
+#### 여기서 `git rebase main` 을 하면
+
+<img src="./img/rebase2.png">
+<br/>
+
+#### 이렇게 C3 커밋을 복사하여 main 브런치 위에 놔두게 된다
+
+#### 하지만 지금 main 브런치를 선택하고 있기 때문에 `git rebase bugFix`를 해서 bugFix 브랜치를 가르키게 해줘야 한다
+
+<img src="./img/rebase3.png">
+<br/>
